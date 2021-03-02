@@ -1,7 +1,6 @@
 import React from 'react'
-import DefaultLayout from '../layout/DefaultLayout'
 const Login: React.FC = () => {
-  return <DefaultLayout>ログイン画面</DefaultLayout>
+  return <>ログイン画面</>
 }
 
 export default Login

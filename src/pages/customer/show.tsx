@@ -1,7 +1,6 @@
 import React from 'react'
-import DefaultLayout from '../../layout/DefaultLayout'
 const CustomerShow: React.FC = () => {
-  return <DefaultLayout>顧客詳細画面</DefaultLayout>
+  return <>顧客詳細画面</>
 }
 
 export default CustomerShow
