@@ -1,0 +1,165 @@
+{
+  "list": [
+    {
+      "customer_id": 0,
+      "customer_name": "Shinichi Matoba",
+      "email": "xxxxx@gamil.com",
+      "phone_number": "080xxxxxxxx",
+      "sex": "male",
+      "address": "兵庫県神戸市西区xxxxxxxxxxxxxx",
+      "birthday": "199x/xx/xx",
+      "payments": [
+        {
+          "customer_payment_id": "xxxxxxxx",
+          "date": "2021/03/01",
+          "amount": 2000
+        },
+        {
+          "customer_payment_id": "aaaaaaaa",
+          "date": "2021/03/03",
+          "amount": 1500
+        },
+        {
+          "customer_payment_id": "bbbbbbbb",
+          "date": "2021/03/12",
+          "amount": 2400
+        },
+        {
+          "customer_payment_id": "yyyyyyyy",
+          "date": "2021/03/20",
+          "amount": 3000
+        },
+        {
+          "customer_payment_id": "zzzzzzzz",
+          "date": "2021/03/27",
+          "amount": 2020
+        }
+      ],
+      "notifications": [
+        {
+          "notification_id": 0,
+          "received_date": "2021/03/01",
+          "category": "event"
+        },
+        {
+          "notification_id": 1,
+          "received_date": "2021/03/013",
+          "category": "sale"
+        },
+        {
+          "notification_id": 2,
+          "received_date": "2021/03/01",
+          "category": "coupon"
+        }
+      ]
+    },
+    {
+      "customer_id": 1,
+      "customer_name": "Michihiro Doi",
+      "email": "xxxxx@gamil.com",
+      "phone_number": "080xxxxxxxx",
+      "sex": "male",
+      "address": "兵庫県神戸市西区xxxxxxxxxxxxxx",
+      "birthday": "199x/xx/xx",
+      "payments": [
+        {
+          "customer_payment_id": "xxxxxxxx",
+          "date": "2021/03/03",
+          "amount": 8040
+        },
+        {
+          "customer_payment_id": "aaaaaaaa",
+          "date": "2021/03/07",
+          "amount": 6980
+        },
+        {
+          "customer_payment_id": "bbbbbbbb",
+          "date": "2021/03/15",
+          "amount": 2300
+        },
+        {
+          "customer_payment_id": "yyyyyyyy",
+          "date": "2021/03/24",
+          "amount": 4460
+        },
+        {
+          "customer_payment_id": "zzzzzzzz",
+          "date": "2021/03/29",
+          "amount": 2120
+        }
+      ],
+      "notifications": [
+        {
+          "notification_id": 0,
+          "received_date": "2021/03/01",
+          "category": "event"
+        },
+        {
+          "notification_id": 1,
+          "received_date": "2021/03/013",
+          "category": "sale"
+        },
+        {
+          "notification_id": 2,
+          "received_date": "2021/03/01",
+          "category": "coupon"
+        }
+      ]
+    },
+    {
+      "customer_id": 2,
+      "customer_name": "Ryosuke Kobayashi",
+      "email": "xxxxx@gamil.com",
+      "phone_number": "080xxxxxxxx",
+      "sex": "male",
+      "address": "兵庫県神戸市西区xxxxxxxxxxxxxx",
+      "birthday": "198x/xx/xx",
+      "payments": [
+        {
+          "customer_payment_id": "xxxxxxxx",
+          "date": "2021/03/01",
+          "amount": 340
+        },
+        {
+          "customer_payment_id": "aaaaaaaa",
+          "date": "2021/03/04",
+          "amount": 3980
+        },
+        {
+          "customer_payment_id": "bbbbbbbb",
+          "date": "2021/03/11",
+          "amount": 2048
+        },
+        {
+          "customer_payment_id": "yyyyyyyy",
+          "date": "2021/03/21",
+          "amount": 5630
+        },
+        {
+          "customer_payment_id": "zzzzzzzz",
+          "date": "2021/03/30",
+          "amount": 7790
+        }
+      ],
+      "notifications": [
+        {
+          "notification_id": 0,
+          "received_date": "2021/03/01",
+          "category": "event"
+        },
+        {
+          "notification_id": 1,
+          "received_date": "2021/03/013",
+          "category": "sale"
+        },
+        {
+          "notification_id": 2,
+          "received_date": "2021/03/01",
+          "category": "coupon"
+        }
+      ]
+    }
+  ],
+  "status": "OK",
+  "message": null
+}
