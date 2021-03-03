@@ -153,13 +153,17 @@ const Customer: React.FC = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {customers.slice(0, limit).map(customer => (
+                  {customers.slice(0, limit).map((customer) => (
                     <TableRow hover key={customer.customer_id}>
                       <TableCell>
-                        <Link to={`/customer/${customer.customer_id}`}>{customer.customer_name}</Link>
+                        <Link to={`/customer/${customer.customer_id}`}>
+                          {customer.customer_name}
+                        </Link>
                       </TableCell>
                       <TableCell align="right">{customer.email}</TableCell>
-                      <TableCell align="right">{customer.phone_number}</TableCell>
+                      <TableCell align="right">
+                        {customer.phone_number}
+                      </TableCell>
                       <TableCell align="right">{customer.sex}</TableCell>
                       <TableCell align="right">{customer.address}</TableCell>
                       <TableCell align="right">{customer.birthday}</TableCell>

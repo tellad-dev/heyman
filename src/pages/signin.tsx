@@ -20,7 +20,7 @@ function Copyright() {
   )
 }
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',
@@ -76,7 +76,13 @@ const Signin: React.FC = () => {
             id="password"
             autoComplete="current-password"
           />
-          <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            color="primary"
+            className={classes.submit}
+          >
             Sign in
           </Button>
         </form>

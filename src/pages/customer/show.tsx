@@ -56,7 +56,7 @@ const CustomerShow: React.FC = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {payments.slice(0, limit).map(payment => (
+                  {payments.slice(0, limit).map((payment) => (
                     <TableRow hover key={payment.customer_payment_id}>
                       <TableCell align="right">{payment.date}</TableCell>
                       <TableCell align="right">{payment.amount}</TableCell>

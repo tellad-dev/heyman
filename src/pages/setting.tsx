@@ -7,7 +7,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import GenericTemplate from '../components/templates/GenericTemplate'
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',
@@ -81,7 +81,13 @@ const Setting: React.FC = () => {
                 />
               </Grid>
             </Grid>
-            <Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+            >
               Update
             </Button>
           </form>

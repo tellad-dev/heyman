@@ -156,7 +156,10 @@ export interface GenericTemplateProps {
   title: string
 }
 
-const GenericTemplate: React.FC<GenericTemplateProps> = ({ children, title }) => {
+const GenericTemplate: React.FC<GenericTemplateProps> = ({
+  children,
+  title,
+}) => {
   const classes = useStyles()
   const [open, setOpen] = React.useState(true)
   const handleDrawerOpen = () => {
@@ -170,18 +173,30 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({ children, title }) =>
     <ThemeProvider theme={theme}>
       <div className={classes.root}>
         <CssBaseline />
-        <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
+        <AppBar
+          position="absolute"
+          className={clsx(classes.appBar, open && classes.appBarShift)}
+        >
           <Toolbar className={classes.toolbar}>
             <IconButton
               edge="start"
               color="inherit"
               aria-label="open drawer"
               onClick={handleDrawerOpen}
-              className={clsx(classes.menuButton, open && classes.menuButtonHidden)}
+              className={clsx(
+                classes.menuButton,
+                open && classes.menuButtonHidden
+              )}
             >
               <MenuIcon />
             </IconButton>
-            <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
+            <Typography
+              component="h1"
+              variant="h6"
+              color="inherit"
+              noWrap
+              className={classes.title}
+            >
               heyman
             </Typography>
           </Toolbar>
@@ -245,7 +260,13 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({ children, title }) =>
         <main className={classes.content}>
           <div className={classes.appBarSpacer} />
           <Container maxWidth="lg" className={classes.container}>
-            <Typography component="h2" variant="h5" color="inherit" noWrap className={classes.pageTitle}>
+            <Typography
+              component="h2"
+              variant="h5"
+              color="inherit"
+              noWrap
+              className={classes.pageTitle}
+            >
               {title}
             </Typography>
             {children}
