@@ -12,6 +12,7 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-router-dom": "^5.1.7",
+    "axios": "^0.21.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-feather": "^2.0.9",
@@ -23,6 +24,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "lint": "eslint --fix --ext .ts,.tsx ./ && tsc -p tsconfig.json && npm run prettier",
+    "prettier": "prettier --write \"{src,_scripts}/**/*.{js,ts,jsx,tsx}\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
