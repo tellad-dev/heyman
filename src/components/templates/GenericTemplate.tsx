@@ -200,7 +200,7 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({ children, title }) =>
           </div>
           <Divider />
           <List>
-            <Link to="/login" className={classes.link}>
+            <Link to="/customers" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
                   <BarChartIcon />

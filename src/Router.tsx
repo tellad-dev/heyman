@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
-import Login from './pages/login'
+import Signin from './pages/signin'
 import Customer from './pages/customer'
 import CustomerShow from './pages/customer/show'
 
@@ -8,8 +8,8 @@ const Router = (): JSX.Element => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/login">
-          <Login />
+        <Route exact path="/signin">
+          <Signin />
         </Route>
         <Route exact path="/customer">
           <Customer />
@@ -18,7 +18,7 @@ const Router = (): JSX.Element => {
           <CustomerShow />
         </Route>
         {/* Not Found */}
-        <Route component={() => <Redirect to="/login" />} />
+        <Route component={() => <Redirect to="/signin" />} />
       </Switch>
     </BrowserRouter>
   )
