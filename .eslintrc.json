@@ -1,40 +1,54 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": [
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:prettier/recommended"
-    ],
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "prettier"
+  ],
+  // "parser": "react-eslint/parser",
+  "parserOptions": {
     "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 12,
-        "sourceType": "module"
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "plugins": [
-        "react",
-        "@typescript-eslint"
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "extraFileExtensions": [".jsx", ".tsx"]
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint"
+  ],
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  },
+  "rules": {
+    "no-console": 0,
+    "no-unused-vars": ["error", { "args": "none" }],
+    "@typescript-eslint/no-var-requires": 0,
+    "@typescript-eslint/ban-ts-comment": 0,
+    "@typescript-eslint/no-empty-function": 0,
+    "@typescript-eslint/no-unused-vars": ["error", { "args": "none" }],
+    // any に対するルールは緩和
+    "@typescript-eslint/no-unsafe-assignment": 0,
+    "@typescript-eslint/no-unsafe-call": 0,
+    "@typescript-eslint/no-unsafe-member-access": 0,
+    "@typescript-eslint/no-unsafe-return": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    "react/jsx-filename-extension": [
+      "error",
+      { "extensions": [".jsx", ".tsx"] }
     ],
-    "settings": {
-        "import/resolver": {
-            "node": {
-            "extensions": [".js", ".jsx", ".ts", ".tsx"]
-            }
-        }
-        },
-        "rules": {
-        "@typescript-eslint/indent": ["error", 2],
-        "@typescript-eslint/prefer-interface": "off",
-        "react/jsx-filename-extension": [
-            "error",
-            { "extensions": [".jsx", ".tsx"] }
-        ],
-        "react/prop-types": "off",
-        "spaced-comment": ["error", "always", { "markers": ["/ <reference"] }]
-        }
+    "react/prop-types": "off"
+  }
 }
