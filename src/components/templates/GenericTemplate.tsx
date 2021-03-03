@@ -200,7 +200,7 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({ children, title }) =>
           </div>
           <Divider />
           <List>
-            <Link to="/customers" className={classes.link}>
+            <Link to="/customer" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
                   <BarChartIcon />
@@ -208,7 +208,7 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({ children, title }) =>
                 <ListItemText primary="Dashboard" />
               </ListItem>
             </Link>
-            <Link to="/customers" className={classes.link}>
+            <Link to="/customer" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
                   <UsersIcon />
@@ -216,7 +216,7 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({ children, title }) =>
                 <ListItemText primary="Customers" />
               </ListItem>
             </Link>
-            <Link to="/customers" className={classes.link}>
+            <Link to="/customer" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
                   <UserIcon />
@@ -224,7 +224,7 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({ children, title }) =>
                 <ListItemText primary="Account" />
               </ListItem>
             </Link>
-            <Link to="/customers" className={classes.link}>
+            <Link to="/setting" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
                   <SettingsIcon />
@@ -232,7 +232,7 @@ const GenericTemplate: React.FC<GenericTemplateProps> = ({ children, title }) =>
                 <ListItemText primary="Setting" />
               </ListItem>
             </Link>
-            <Link to="/customers" className={classes.link}>
+            <Link to="/customer" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
                   <LogOutIcon />
