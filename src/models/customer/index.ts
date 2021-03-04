@@ -1,5 +1,6 @@
 import { Payment } from '../Payment'
 import { Notification } from '../Notification'
+import * as Model from '../../models'
 
 export interface ICustomer {
   readonly customerId: string
@@ -34,5 +35,19 @@ export class Customer implements ICustomer {
     this.birthday = obj.birthday
     this.payments = obj.payments
     this.notifications = obj.notifications
+  }
+
+  static createFromApi(obj: Model.Api.Customer): Customer {
+    return new Customer({
+      customerId: obj.customer_id,
+      customerName: obj.customer_name,
+      email: obj.email,
+      phoneNumber: obj.phone_number,
+      sex: obj.sex,
+      address: obj.address,
+      birthday: obj.birthday,
+      payments: obj.payments.map(p => Payment.createFromApi(p)),
+      notifications: obj.notifications.map(n => Notification.createFromApi(n))
+    })
   }
 }
