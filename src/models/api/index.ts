@@ -1,2 +1,2 @@
 export * from './ICustomerGetResult'
-export * from '../api'
+export * from './CustomerGetResult'
