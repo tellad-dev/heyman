@@ -6,6 +6,6 @@ const resource = '/store/customer'
 
 export default {
   get: <T>(): Promise<AxiosResponse<T>> => {
-    return Repository.get(`${version}${resource}`)
+    return Repository.get<T>(`${version}${resource}`)
   },
 }
