@@ -1,3 +1,5 @@
+import * as Model from '../../models'
+
 export interface INotification {
   readonly notificationId: number
   readonly receivedDate: string
@@ -13,5 +15,13 @@ export class Notification {
     this.notificationId = obj.notificationId
     this.receivedDate = obj.receivedDate
     this.category = obj.category
+  }
+
+  static createFromApi(obj: Model.Api.Notification): Notification {
+    return new Notification({
+      notificationId: obj.notification_id,
+      receivedDate: obj.received_date,
+      category: obj.category
+    })
   }
 }
