@@ -1,16 +1,16 @@
 export interface IPayment {
-  readonly customer_payment_id: number
+  readonly customerPaymentId: string
   readonly date: string
   readonly amount: number
 }
 
-export class Payment {
-  readonly customerPaymentId: number
+export class Payment implements IPayment {
+  readonly customerPaymentId: string
   readonly date: string
   readonly amount: number
 
   constructor(obj: IPayment) {
-    this.customerPaymentId = obj.customer_payment_id
+    this.customerPaymentId = obj.customerPaymentId
     this.date = obj.date
     this.amount = obj.amount
   }

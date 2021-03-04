@@ -2,10 +2,10 @@ import { Payment } from '../Payment'
 import { Notification } from '../Notification'
 
 export interface ICustomer {
-  readonly customer_id: string
-  readonly customer_name: string
+  readonly customerId: string
+  readonly customerName: string
   readonly email: string
-  readonly phone_number: number
+  readonly phoneNumber: number
   readonly sex: string
   readonly address: string
   readonly birthday: string
@@ -13,7 +13,7 @@ export interface ICustomer {
   readonly notifications: Notification[]
 }
 
-export class Customer {
+export class Customer implements ICustomer {
   readonly customerId: string
   readonly customerName: string
   readonly email: string
@@ -25,10 +25,10 @@ export class Customer {
   readonly notifications: Notification[]
 
   constructor(obj: ICustomer) {
-    this.customerId = obj.customer_id
-    this.customerName = obj.customer_name
+    this.customerId = obj.customerId
+    this.customerName = obj.customerName
     this.email = obj.email
-    this.phoneNumber = obj.phone_number
+    this.phoneNumber = obj.phoneNumber
     this.sex = obj.sex
     this.address = obj.address
     this.birthday = obj.birthday
