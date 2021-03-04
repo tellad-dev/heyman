@@ -3,8 +3,8 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import Signin from './pages/signin'
 import Signup from './pages/signup'
 import Setting from './pages/setting'
-import Customer from './pages/customer'
-import CustomerShow from './pages/customer/show'
+import CustomerList from './pages/CustomerManagement/customerList'
+import CustomerDetail from './pages/CustomerManagement/customerDetail'
 
 const Router = (): JSX.Element => {
   return (
@@ -17,10 +17,10 @@ const Router = (): JSX.Element => {
           <Signup />
         </Route>
         <Route exact path="/customer">
-          <Customer />
+          <CustomerList />
         </Route>
         <Route exact path="/customer/:id">
-          <CustomerShow />
+          <CustomerDetail />
         </Route>
         <Route exact path="/setting">
           <Setting />
