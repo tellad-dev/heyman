@@ -9,6 +9,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
+import { RepositoryFactory } from '../repositories/RepositoryFactory'
+import * as Models from '../models'
 
 function Copyright() {
   return (
@@ -42,7 +44,23 @@ const useStyles = makeStyles((theme) => ({
 
 const Signin: React.FC = () => {
   const classes = useStyles()
-
+  const customerRepository = RepositoryFactory.get('customers')
+  const func = async () => {
+    const data: any = await customerRepository.get()
+    const customerGetResult: Models.CustomerGetResult = new Models.CustomerGetResult(
+      data.data.list[0]
+    )
+    const customer: Models.Customer = new Models.Customer(customerGetResult)
+    //53行目で以下のエラー
+    // Argument of type 'CustomerGetResult' is not assignable to parameter of type 'ICustomer'.
+    //   Types of property 'payments' are incompatible.
+    //   Type 'PaymentGetResult[]' is not assignable to type 'Payment[]'.
+    //     Property 'customerPaymentId' is missing in type 'PaymentGetResult' but required in type 'Payment'.ts(2345)
+    // index.ts(8, 12): 'customerPaymentId' is declared here.
+    console.log(customer)
+  }
+  void func()
+  console.log('aaaaaaaaaa')
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />

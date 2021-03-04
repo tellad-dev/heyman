@@ -1,11 +1,11 @@
 export interface IPayment {
-  readonly customer_payment_id: number
+  readonly customer_payment_id: string
   readonly date: string
   readonly amount: number
 }
 
 export class Payment {
-  readonly customerPaymentId: number
+  readonly customerPaymentId: string
   readonly date: string
   readonly amount: number
 

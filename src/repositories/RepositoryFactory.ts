@@ -1,6 +1,6 @@
-import CustomerRepository from './customerRepository'
+import CustomerRepository from './CustomerRepository'
 
-type Repository = typeof CustomerRepository 
+type Repository = typeof CustomerRepository
 
 type Repositories = {
   [key: string]: Repository

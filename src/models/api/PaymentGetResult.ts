@@ -1,11 +1,11 @@
 export interface IPaymentGetResult {
-  customer_payment_id: number
+  customer_payment_id: string
   date: string
   amount: number
 }
 
 export class PaymentGetResult implements IPaymentGetResult {
-  customer_payment_id: number
+  customer_payment_id: string
   date: string
   amount: number
 
