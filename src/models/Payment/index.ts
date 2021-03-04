@@ -21,7 +21,7 @@ export class Payment implements IPayment {
     return new Payment({
       customerPaymentId: obj.customer_payment_id,
       date: obj.date,
-      amount: obj.amount
+      amount: obj.amount,
     })
   }
 }

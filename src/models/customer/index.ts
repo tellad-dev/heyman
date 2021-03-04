@@ -46,8 +46,10 @@ export class Customer implements ICustomer {
       sex: obj.sex,
       address: obj.address,
       birthday: obj.birthday,
-      payments: obj.payments.map(p => Payment.createFromApi(p)),
-      notifications: obj.notifications.map(n => Notification.createFromApi(n))
+      payments: obj.payments.map((p) => Payment.createFromApi(p)),
+      notifications: obj.notifications.map((n) =>
+        Notification.createFromApi(n)
+      ),
     })
   }
 }

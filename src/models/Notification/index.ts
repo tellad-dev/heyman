@@ -21,7 +21,7 @@ export class Notification {
     return new Notification({
       notificationId: obj.notification_id,
       receivedDate: obj.received_date,
-      category: obj.category
+      category: obj.category,
     })
   }
 }
