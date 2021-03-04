@@ -6,7 +6,7 @@ export interface INotification {
   readonly category: number
 }
 
-export class Notification {
+export class Notification implements INotification {
   readonly notificationId: number
   readonly receivedDate: string
   readonly category: number
