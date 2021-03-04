@@ -1,4 +1,4 @@
-import CustomerRepository from './CustomerRepository'
+import CustomerRepository from './customerRepository'
 
 type Repository = typeof CustomerRepository
 
