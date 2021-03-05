@@ -13,8 +13,10 @@ import {
   Paper,
 } from '@material-ui/core'
 import GenericTemplate from '../../components/templates/GenericTemplate'
-import { RepositoryFactory } from '../../repositories/RepositoryFactory'
-import * as Models from '../../models'
+import { useAppDispatch } from '../../hooks/useAppDispatch'
+import { useAppSelector } from '../../hooks/useAppSelector'
+import { fetchCustomers } from '../../features/Customer/customerSlice'
+import * as Model from '../../models'
 
 const Customer: React.FC = () => {
   //
@@ -23,35 +25,29 @@ const Customer: React.FC = () => {
 
   const [limit, setLimit] = useState<number>(10)
   const [page, setPage] = useState<number>(0)
-  const [customers, setCustomers] = useState<Models.Customer[]>([])
 
   //
   // Data
   //
 
-  const customerRepository = RepositoryFactory.get('customers')
+  const customers = useAppSelector<Model.Customer[] | null>(
+    (state) => state.customers.customers
+  )
+  const dispatch = useAppDispatch()
 
   //
   // Hooks
   //
 
-  useEffect((): void => {
-    void getCustomerList()
+  useEffect(() => {
+    if (customers === null) {
+      void dispatch(fetchCustomers())
+    }
   }, [])
 
   //
   // Methods
   //
-
-  const getCustomerList = async (): Promise<void> => {
-    const {
-      data,
-    } = await customerRepository.get<Models.Api.CustomerGetResult>()
-    const customerList = data.list.map((l: Models.Api.Customer) =>
-      Models.Customer.createFromApi(l)
-    )
-    setCustomers(customerList)
-  }
 
   const handleLimitChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -88,7 +84,7 @@ const Customer: React.FC = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {customers.slice(0, limit).map((customer) => (
+                  {customers?.slice(0, limit).map((customer) => (
                     <TableRow hover key={customer.customerId}>
                       <TableCell>
                         <Link to={`/customer/${customer.customerId}`}>
@@ -108,7 +104,7 @@ const Customer: React.FC = () => {
               </Table>
               <TablePagination
                 component="div"
-                count={customers.length}
+                count={customers ? customers.length : 1}
                 onChangePage={handlePageChange}
                 onChangeRowsPerPage={handleLimitChange}
                 page={page}
