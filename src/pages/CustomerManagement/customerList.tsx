@@ -23,39 +23,12 @@ const Customer: React.FC = () => {
   const customerRepository = RepositoryFactory.get('customers')
 
   const getCustomerList = async () => {
-    const customerGetResult: any = await customerRepository.get()
-    const customersGetResult: Models.ICustomerGetResult[] = customerGetResult.data.list.map(
-      (p: any) => {
-        return p
-      }
+    const res: any = await customerRepository.get()
+    const customerGetResult: Models.Api.Customer[] = res.data.list.map(
+      (p: any) => p
     )
-    const customerList: Models.Customer[] = customersGetResult.map(
-      (p: Models.ICustomerGetResult) => {
-        console.log('customersGetResult.payments.map', p.notifications)
-        return new Models.Customer({
-          customerId: p.customer_id,
-          customerName: p.customer_name,
-          email: p.email,
-          phoneNumber: p.phone_number,
-          sex: p.sex,
-          address: p.address,
-          birthday: p.birthday,
-          payments: p.payments.map((p: any) => {
-            return new Models.Payment({
-              customerPaymentId: p.customer_payment_id,
-              date: p.date,
-              amount: p.amount,
-            })
-          }),
-          notifications: p.notifications.map((p: any) => {
-            return new Models.Notification({
-              notificationId: p.notification_id,
-              receivedDate: p.received_date,
-              category: p.category,
-            })
-          }),
-        })
-      }
+    const customerList: Models.Customer[] = customerGetResult.map(
+      (p: Models.Api.Customer) => Models.Customer.createFromApi(p)
     )
     console.log(customerList)
     setCustomers(customerList)
