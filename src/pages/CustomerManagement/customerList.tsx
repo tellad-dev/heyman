@@ -17,12 +17,33 @@ import { RepositoryFactory } from '../../repositories/RepositoryFactory'
 import * as Models from '../../models'
 
 const Customer: React.FC = () => {
+  //
+  // useState
+  //
+
   const [limit, setLimit] = useState<number>(10)
   const [page, setPage] = useState<number>(0)
   const [customers, setCustomers] = useState<Models.Customer[]>([])
+
+  //
+  // Data
+  //
+
   const customerRepository = RepositoryFactory.get('customers')
 
-  const getCustomerList = async () => {
+  //
+  // Hooks
+  //
+
+  useEffect((): void => {
+    void getCustomerList()
+  }, [])
+
+  //
+  // Methods
+  //
+
+  const getCustomerList = async (): Promise<void> => {
     const {
       data,
     } = await customerRepository.get<Models.Api.CustomerGetResult>()
@@ -31,17 +52,23 @@ const Customer: React.FC = () => {
     )
     setCustomers(customerList)
   }
-  useEffect(() => {
-    void getCustomerList()
-  }, [])
 
-  const handleLimitChange = (event: any) => {
-    setLimit(event.target.value)
+  const handleLimitChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ): void => {
+    setLimit(Number(event.target.value))
   }
 
-  const handlePageChange = (event: any, newPage: number) => {
+  const handlePageChange = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent> | null,
+    newPage: number
+  ): void => {
     setPage(newPage)
   }
+
+  //
+  // Jsx
+  //
 
   return (
     <>
