@@ -7,11 +7,11 @@ import { configureStore } from '@reduxjs/toolkit'
 import customersReducer from '../features/Customer/customerSlice'
 
 const reducer = combineReducers({
-  customers: customersReducer 
+  customers: customersReducer,
 })
 
 const store = configureStore({
-  reducer
+  reducer,
 })
 
 export type RootState = ReturnType<typeof store.getState>
