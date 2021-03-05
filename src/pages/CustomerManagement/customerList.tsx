@@ -23,14 +23,12 @@ const Customer: React.FC = () => {
   const customerRepository = RepositoryFactory.get('customers')
 
   const getCustomerList = async () => {
-    const res: any = await customerRepository.get()
-    const customerGetResult: Models.Api.Customer[] = res.data.list.map(
-      (p: any) => p
+    const {
+      data,
+    } = await customerRepository.get<Models.Api.CustomerGetResult>()
+    const customerList = data.list.map((l: Models.Api.Customer) =>
+      Models.Customer.createFromApi(l)
     )
-    const customerList: Models.Customer[] = customerGetResult.map(
-      (p: Models.Api.Customer) => Models.Customer.createFromApi(p)
-    )
-    console.log(customerList)
     setCustomers(customerList)
   }
   useEffect(() => {

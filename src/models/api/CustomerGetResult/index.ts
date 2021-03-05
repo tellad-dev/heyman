@@ -25,5 +25,5 @@ export interface Customer {
 }
 
 export interface CustomerGetResult extends Base {
-  list: Customer
+  list: Customer[]
 }
